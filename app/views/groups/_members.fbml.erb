@@ -1,0 +1,14 @@
+<h3>Group members</h3>
+<table>
+  <% @group.group_users.each do |user| %>
+    <tr>
+      <td> 
+        <fb:profile-pic uid="<%= user.fb_uid %>" linked="true" /> 
+        <fb:name uid="<%= user.fb_uid %>" useyou="false" />
+      </td>
+      <td>
+        <%= user.balance %>
+      </td>
+    </tr>
+  <% end %>
+</table>

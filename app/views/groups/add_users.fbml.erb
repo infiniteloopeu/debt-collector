@@ -1,0 +1,15 @@
+<%= render :partial => "members" %>
+
+Add more friends to group:
+
+<% form_for :group, add_users_group_path(@group) do |f| %>
+
+  <fb:multi-friend-input width="350px" include_me = "true" border_color="#8496ba" exclude_ids = "<%= @exclude_ids %>" />
+  
+  <p>
+    <%= f.submit 'Add' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', edit_group_path(@group) %>

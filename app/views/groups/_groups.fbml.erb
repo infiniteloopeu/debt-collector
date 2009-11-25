@@ -1,0 +1,38 @@
+<h3> Groups that you own: </h3>
+	
+<table>
+  <tr>
+    <th> Group Name: </th>
+    <th> Actions: </th>    
+  </tr>
+  <% @owned_groups.each do |g|%>
+    <tr>
+      <td>      
+        <%= link_to g.name, group_path(g) %>
+      </td>
+      <td>      
+        <%= link_to "Edit", edit_group_path(g) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h3> Your friends groups: </h3>
+
+<table>
+  <tr>
+    <th> Group Name: </th>
+    <th> Owner: </th>
+    </tr>
+  <% @friends_groups.each do |g|%>
+    <tr>
+      <td>      
+        <%= link_to "Show %s" % g.name, group_path(g) %>
+      </td>
+      <td>      
+        <fb:name uid="<%= g.fb_uid %>" useyou="false" />
+      </td>      
+    </tr>
+  <% end %>
+</table>
+

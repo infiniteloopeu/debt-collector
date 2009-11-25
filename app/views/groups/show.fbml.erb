@@ -1,0 +1,21 @@
+<%= render :partial => 'shared/nav' %>
+
+<p>
+  <table>
+    <tr>
+      <td> Name: </td>
+      <td> <%= @group.name %> </td>  
+    </tr>
+    <tr>
+      <td> Owner: </td>
+      <td> <fb:name uid="<%= @group.fb_uid %>" useyou="false" /> </td>  
+    </tr>
+  </table>
+</p>
+
+<%= render :partial => "members" %>
+
+<% if @facebook_session.user.id == @group.fb_uid %>
+  <%= link_to 'Edit', edit_group_path(@group) %> |
+<% end %>
+<%= link_to 'Back', groups_path %>

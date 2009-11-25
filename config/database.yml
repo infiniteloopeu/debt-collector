@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  database: fb_development
+  username: fb_user
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: fb_test
+  username: fb_user
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: fb_prod
+  username: fb_user
+  host: localhost
+
+staging:
+  adapter: postgresql
+  database: fb_staging
+  username: fb_user
+  host: localhost

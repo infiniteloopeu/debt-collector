@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fb_uid: 11235
+  balance: 0
+  group_id: 5
+
+two:
+  fb_uid: 1
+  balance: 0
+  group_id: 1
+
+three:
+  fb_uid: 159
+  balance: 0
+  group_id: 7

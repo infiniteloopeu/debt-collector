@@ -1,0 +1,8 @@
+<fb:header>Debt Collector</fb:header>
+
+<fb:tabs>
+  <fb:tab-item href='<%= url_for :controller => 'dashboard',
+:action => 'index' %>' title='Home' <%= if @controller.is_a?(DashboardController) then "selected='true'" end %>  />
+  <fb:tab-item href='<%= url_for :controller => 'groups',
+:action => 'index' %>' title='Groups' <%= if @controller.is_a?(GroupsController) then "selected='true'" end %> />
+</fb:tabs>

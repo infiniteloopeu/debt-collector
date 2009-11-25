@@ -1,0 +1,30 @@
+<h1>Edit group</h1>
+
+<h3>Users:</h3>
+<table>
+  <% @group.group_users.each do |user| %>
+    <tr>
+      <td> 
+        <fb:profile-pic uid="<%= user.fb_uid %>" linked="true" /> 
+        <fb:name uid="<%= user.fb_uid %>" useyou="false" />
+      </td>
+      <td>
+        <%= link_to "Remove", remove_user_group_path(@group, :uid => user.fb_uid), :confirm => "Remove user from your group?" %>
+      </td>
+    </tr>
+  <% end%>
+</table>
+
+<% form_for(@group) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Add more friends to your group', add_users_group_path(@group) %> |
+<%= link_to 'Show', @group %> |
+<%= link_to 'Back', groups_path %>
