@@ -11,7 +11,7 @@
 development:
   api_key: 5fe565b6fb8ad6ec74195677e47b56c2
   secret_key: c67d5320def30acff267d792b79af3d1
-  canvas_page_name: kuba_test_app
+  canvas_page_name: debt_collector
   callback_url: http://office.infiniteloop.eu:5000/
   pretty_errors: true
   set_asset_host_to_callback_url: true
@@ -19,7 +19,7 @@ development:
 test:
   api_key: 5fe565b6fb8ad6ec74195677e47b56c2
   secret_key: c67d5320def30acff267d792b79af3d1
-  canvas_page_name: kuba_test_app
+  canvas_page_name: debt_collector
   callback_url: http://office.infiniteloop.eu:5000/
   pretty_errors: true
   set_asset_host_to_callback_url: true
@@ -27,7 +27,7 @@ test:
 production:
   api_key: 5fe565b6fb8ad6ec74195677e47b56c2
   secret_key: c67d5320def30acff267d792b79af3d1
-  canvas_page_name: kuba_test_app
+  canvas_page_name: debt_collector
   callback_url: http://office.infiniteloop.eu:5000/
   pretty_errors: true
   set_asset_host_to_callback_url: true
