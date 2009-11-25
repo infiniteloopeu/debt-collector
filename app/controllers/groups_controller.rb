@@ -28,7 +28,6 @@ class GroupsController < ApplicationController
     @group.fb_uid = @facebook_session.user.id 
 
     if @group.save
-      flash[:notice] = 'Group was successfully created.'
       redirect_to(@group)
     else
       render :action => "new"
@@ -39,7 +38,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     if @group.update_attributes(params[:group])
-      flash[:notice] = 'Group was successfully updated.'
       redirect_to(@group)
     else
       render :action => "edit"
@@ -47,14 +45,15 @@ class GroupsController < ApplicationController
   end
 
   def add_users
-    
     if @method == 'GET'
       @exclude_ids = @group.group_users.map(&:fb_uid).join(',')
     elsif @method == 'POST'
-      params[:ids].each do |id|
-        GroupUser.create!(:fb_uid => id.to_i, :group_id => @group.id)
+      if params[:ids]
+        params[:ids].each do |id|
+          GroupUser.create!(:fb_uid => id.to_i, :group_id => @group.id)
+        end
       end
-      redirect_to :action => 'edit'
+      redirect_to :action => :edit
     else
       raise_unknown_action_error
     end

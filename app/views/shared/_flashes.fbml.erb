@@ -1,0 +1,16 @@
+flashes <%= h flash.inspect %>
+<%= h flash[:notice] %>
+
+<div id="flashes">
+  <% if flash[:notice] %>
+      <fb:success message="<%= h flash[:notice] %>" />
+  <% end%>
+  <% if flash[:info] %>
+      <fb:explanation message="<%= h flash[:info] %>" />
+  <% end%>
+  <% if flash[:error] %>
+      <fb:explanation message="<%= h flash[:error] %>" />
+  <% end%>
+</div>
+
+	

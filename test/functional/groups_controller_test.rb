@@ -30,7 +30,6 @@ class GroupsControllerTest < ActionController::TestCase
     assert gr, "new record should exist in db"
     assert_equal "new name test create group", gr.name
     assert_equal 11235, gr.fb_uid, "Owner of the created group should be the stubbed user 11235"
-    assert_equal 'Group was successfully created.', flash[:notice]
   end
 
   test "edit group for good user" do
